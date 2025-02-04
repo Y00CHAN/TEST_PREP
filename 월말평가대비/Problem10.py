@@ -7,9 +7,18 @@
 ############## 주의 ##############
 # 입력을 받기위한 input 함수는 절대 사용하지 않습니다.
 
-def is_prime():
+def is_prime(num):
     # 여기에 코드를 작성하세요.
-    pass
+    if num < 2:
+        return False
+    if num == 2:
+        return True
+    
+    for i in range(2, num):
+        if num % i == 0:
+            return False
+        
+    return True
 
 # 추가 테스트를 위한 코드 작성 가능
 # 예) print(함수명(인자))
@@ -22,3 +31,4 @@ print(is_prime(7))   # True
 print(is_prime(10))  # False
 print(is_prime(2))   # True
 #####################################################
+

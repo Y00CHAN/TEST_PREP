@@ -7,9 +7,14 @@
 ############## 주의 ##############
 # 입력을 받기위한 input 함수는 절대 사용하지 않습니다.
 
-def calculate_average():
+def calculate_average(lst):
     # 여기에 코드를 작성하세요.
-    pass
+    add = 0
+    length = 0
+    for num in lst:
+        add = num + add
+        length += 1
+    return add / length
 
 # 추가 테스트를 위한 코드 작성 가능
 # 예) print(함수명(인자))
