@@ -7,9 +7,22 @@
 ############## 주의 ##############
 # 입력을 받기위한 input 함수는 절대 사용하지 않습니다.
 
-def intersection():
-    # 여기에 코드를 작성하세요.
-    pass
+def intersection(lst_1, lst_2):
+    # 두 리스트 중 작은 리스트를 기준으로 반복하여 효율성 개선
+    if len(lst_1) > len(lst_2):
+        lst_1, lst_2 = lst_2, lst_1  # 항상 lst_1이 더 작은 리스트가 되도록 스왑
+
+    mix_lst = []
+    seen = set()  # 중복 방지를 위한 집합
+
+    for num in lst_1:
+        if num in lst_2 and num not in seen:
+            mix_lst.append(num)
+            seen.add(num)  # 중복 추가 방지
+
+    return mix_lst
+
+
 
 # 추가 테스트를 위한 코드 작성 가능
 # 예) print(함수명(인자))

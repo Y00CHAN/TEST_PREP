@@ -7,9 +7,19 @@
 ############## 주의 ##############
 # 입력을 받기위한 input 함수는 절대 사용하지 않습니다.
 
-def largest_concatenated_number():
-    # 여기에 코드를 작성하세요.
-    pass
+def largest_concatenated_number(numbers):
+    # 비교 함수 없이 커스텀 정렬을 람다로 처리
+    numbers = list(map(str, numbers))
+
+    # 정렬: 두 문자열을 이어붙였을 때 큰 수가 앞으로 오도록 정렬
+    numbers.sort(key=lambda x: x*10, reverse=True)  # 문자열을 10배 반복하여 비교
+
+    # 모두 0으로만 이루어진 경우 "0" 반환
+    if numbers[0] == '0':
+        return '0'
+
+    # 리스트를 이어붙여 최종 결과 반환
+    return ''.join(numbers)
 
 # 추가 테스트를 위한 코드 작성 가능
 # 예) print(함수명(인자))
